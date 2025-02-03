@@ -7,7 +7,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components it/ui/sidebar"
+  SidebarGroupContent
+} from "@/components/ui/sidebar"
 import { Gamepad2, Info, ShieldCheck, Cog } from "lucide-react"
  
 
@@ -42,7 +43,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
         <SidebarGroupContent>
-            <SidebarMenu>
+          <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
