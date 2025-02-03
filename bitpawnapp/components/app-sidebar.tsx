@@ -7,9 +7,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarGroupContent
+  SidebarGroupContent,
+  useSidebar
 } from "@/components/ui/sidebar"
-import { Gamepad2, Info, ShieldCheck, Cog } from "lucide-react"
+import { Gamepad2, Info, ShieldCheck, Cog,GalleryVerticalEnd } from "lucide-react"
  
 
 // Menu items.
