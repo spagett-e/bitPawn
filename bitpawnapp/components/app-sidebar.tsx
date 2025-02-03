@@ -37,8 +37,9 @@ const items = [
 ]
 
 export function AppSidebar() {
+  const{ isMobile } = useSidebar()
   return (
-    <Sidebar>
+    <Sidebar variant="floating" collapsable="icon">
       <SidebarHeader />
        <SidebarContent>
          <SidebarGroup>
