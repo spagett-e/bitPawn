@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   SidebarProvider,
