@@ -6,16 +6,17 @@ import {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-      <html lang="en">
-        <body>
-          <SidebarProvider>
+      <SidebarProvider>
+        <html lang="en">
+          <body>
             <AppSidebar />
+            <SidebarTrigger />
             <main>
-              <SidebarTrigger />
               {children}
             </main>
-          </SidebarProvider>
-        </body>
-      </html>
+          </body> 
+        </html>
+      </SidebarProvider>
+        
     )
   }
