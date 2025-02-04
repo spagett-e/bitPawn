@@ -8,17 +8,16 @@ import "./globals.css"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-      <SidebarProvider>
-        <html lang="en">
-          <body>
+      <html lang="en">
+        <body>
+          <SidebarProvider>
             <AppSidebar />
-            <SidebarTrigger />
             <main>
-              {children}
+             <SidebarTrigger />
+             {children}
             </main>
-          </body> 
-        </html>
-      </SidebarProvider>
-        
+          </SidebarProvider>
+        </body> 
+      </html>
     )
   }
