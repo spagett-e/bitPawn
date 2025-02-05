@@ -1,75 +1,53 @@
 "use client";
 
 import * as React from "react";
-import { useSidebar } from "@/components/ui/sidebar"
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
-
-import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
+import { GalleryVerticalEnd, Gamepad, Info, FileText, Cog } from "lucide-react";
 import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
 } from "@/components/ui/sidebar";
 
 // User data 
-const data = {
+const user = {
   user: {
     name: "Walter",
     email: "test@test.com",
     avatar: "avatars/sample.png"
   },
+}
 // Menu items
-nav: [
+const nav = [
   {
     title: "Play",
     url: "#",
-    icon: Book,
+    icon: Gamepad,
   },
   {
     title: "About",
     url: "#",
-    icon: Box,
+    icon: Info,
   },
   {
-    title: "Trust & Transparency",
+    title: "ToS",
     url: "#",
-    icon: Code,
+    icon: FileText,
   },
   {
     title: "Settings",
     url: "#",
-    icon: Layers,
-  }
-] 
-}
+    icon: Cog,
+  },
+]
 
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const {
-    state,
-    open,
-    setOpen,
-    openMobile,
-    setOpenMobile,
-    isMobile,
-    toggleSidebar,
-  } = useSidebar()
+
   return (
     <Sidebar collapsible="icon" variant="floating" {...props}>
       <SidebarHeader>
@@ -91,7 +69,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-            {data.map((item) => (
+            {nav.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild tooltip={item.title}>
                   <a href={item.url} className="flex items-center gap-2">
@@ -104,7 +82,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenu>
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user.user} />
       </SidebarFooter>
     </Sidebar>
   );
