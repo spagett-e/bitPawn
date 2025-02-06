@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { GalleryVerticalEnd, Gamepad, Info, FileText, Cog } from "lucide-react";
+import { GalleryVerticalEnd, Swords, Info, FileText, Cog } from "lucide-react";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -24,24 +24,24 @@ const user = {
 // Menu items
 const nav = [
   {
-    title: "Play",
+    title: "Classic",
     url: "#",
-    icon: Gamepad,
+    icon: Swords,
+  },
+  {
+    title: "Vs Ai",
+    url: "#",
+    icon: Bot,
+  },
+  {
+    title: "Custom",
+    url: "#",
+    icon: UserCog,
   },
   {
     title: "About",
     url: "#",
     icon: Info,
-  },
-  {
-    title: "ToS",
-    url: "#",
-    icon: FileText,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Cog,
   },
 ]
 
