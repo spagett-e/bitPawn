@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { GalleryVerticalEnd, Swords, Info, FileText, Cog } from "lucide-react";
+import { GalleryVerticalEnd, UserCog, Info, Bot, Flame, } from "lucide-react";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -11,6 +11,8 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarGroup,
+  SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 
 // User data 
@@ -24,9 +26,9 @@ const user = {
 // Menu items
 const nav = [
   {
-    title: "Classic",
+    title: "Blitz",
     url: "#",
-    icon: Swords,
+    icon: Flame,
   },
   {
     title: "Vs Ai",
@@ -68,7 +70,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarMenu>
+        <SidebarGroup>
+          <SidebarGroupLabel>Play</SidebarGroupLabel>
+          <SidebarMenu>
             {nav.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild tooltip={item.title}>
@@ -80,6 +84,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user.user} />
